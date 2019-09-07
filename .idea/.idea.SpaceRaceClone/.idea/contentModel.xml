@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Game Center Admin\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Game Center Admin\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_SpaceRaceClone.468381184.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Game Center Admin\Documents\Unity Projects\SpaceRaceClone" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="LRAsteroidController.cs" t="Include" />
+        <e p="P2Controller.cs" t="Include" />
+        <e p="PlayerController.cs" t="Include" />
+        <e p="TimerBar.cs" t="Include" />
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="SpaceRaceClone.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
