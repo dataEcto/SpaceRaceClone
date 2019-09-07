@@ -9,6 +9,7 @@
         <e p="LRAsteroidController.cs" t="Include" />
         <e p="P2Controller.cs" t="Include" />
         <e p="PlayerController.cs" t="Include" />
+        <e p="RLAsteroidController.cs" t="Include" />
         <e p="TimerBar.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />

@@ -9,6 +9,7 @@ public class P2Controller : MonoBehaviour
     [Header("Public Variables")]
     public float speed;
     public GameObject respawnPoint2;
+    public GameObject deathRespawnPoint2;
     public float playerTwoScore;
     public Text p2Text;
 
@@ -55,7 +56,20 @@ public class P2Controller : MonoBehaviour
         this.transform.position = respawnPoint2.transform.position;
         p2Scored = true;
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Left") || other.gameObject.CompareTag("Right"))
+        {
+            Debug.Log("P2 is hit!");
+            transform.position = new Vector2(transform.position.x,-9);
+            StartCoroutine("P2Death");
+        }
+    }
     
-    
-        
+    IEnumerator P2Death()
+    {
+        yield return new WaitForSeconds(1);
+        transform.position = deathRespawnPoint2.transform.position;
+    }
 }

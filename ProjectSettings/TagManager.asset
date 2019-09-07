@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Player 2
   - Left
+  - LR Boundary
+  - Right
+  - RL Boundary
   layers:
   - Default
   - TransparentFX
@@ -15,8 +18,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - LR
+  - RL
   - 
   - 
   - 

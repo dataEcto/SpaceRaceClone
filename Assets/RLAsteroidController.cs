@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LRAsteroidController : MonoBehaviour
+public class RLAsteroidController : MonoBehaviour
 {
 
     public float asteroidSpeed;
     public Vector3 defaultTransform;
-    private Rigidbody2D lrAsteroidRB;
-    private Vector2 lrAsteroidVelocity;
+    private Rigidbody2D rlAsteroidRB;
+    private Vector2 rlAsteroidVelocity;
     
     
     
     // Start is called before the first frame update
     void Start()
     {
-        lrAsteroidRB = GetComponent<Rigidbody2D>();
+        rlAsteroidRB = GetComponent<Rigidbody2D>();
         defaultTransform = transform.position;
         
     }
@@ -23,21 +23,21 @@ public class LRAsteroidController : MonoBehaviour
 
     void Update()
     {
-        Vector2 asteroidMoveInput = Vector2.right;
-        lrAsteroidVelocity = asteroidMoveInput * asteroidSpeed;
-        Physics2D.IgnoreLayerCollision(8,9);
+        Vector2 asteroidMoveInput = Vector2.left;
+        rlAsteroidVelocity = asteroidMoveInput * asteroidSpeed;
+        Physics.IgnoreLayerCollision(8,9);
 
     }
 
     private void FixedUpdate()
     {
-        lrAsteroidRB.MovePosition(lrAsteroidRB.position + lrAsteroidVelocity * Time.fixedDeltaTime);
+        rlAsteroidRB.MovePosition(rlAsteroidRB.position + rlAsteroidVelocity * Time.fixedDeltaTime);
         
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("LR Boundary"))
+        if (other.gameObject.CompareTag("RL Boundary"))
         {
             transform.position = defaultTransform;
         }

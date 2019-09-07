@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Public Variables")]
     public float speed;
     public GameObject respawnPoint;
+    public GameObject deathRespawnPoint;
     public float playerOneScore;
     public Text p1Text;
 
@@ -60,6 +61,23 @@ public class PlayerController : MonoBehaviour
         Debug.Log("I have hit the Trigger");
         this.transform.position = respawnPoint.transform.position;
         p1Scored = true;
+
+       
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Left") || other.gameObject.CompareTag("Right"))
+        {
+            Debug.Log("P1 is hit!");
+            transform.position = new Vector2(transform.position.x,-9);
+            StartCoroutine("P1Death");
+        }
+    }
+
+    IEnumerator P1Death()
+    {
+        yield return new WaitForSeconds(1);
+        transform.position = deathRespawnPoint.transform.position;
+    }
 }
