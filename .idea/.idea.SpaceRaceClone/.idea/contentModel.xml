@@ -6,11 +6,14 @@
     <e p="C:\Users\Game Center Admin\Documents\Unity Projects\SpaceRaceClone" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="LRAsteroidController.cs" t="Include" />
-        <e p="P2Controller.cs" t="Include" />
-        <e p="PlayerController.cs" t="Include" />
-        <e p="RLAsteroidController.cs" t="Include" />
-        <e p="TimerBar.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="LRAsteroidController.cs" t="Include" />
+          <e p="P2Controller.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+          <e p="PopUpScript.cs" t="Include" />
+          <e p="RLAsteroidController.cs" t="Include" />
+          <e p="TimerBar.cs" t="Include" />
+        </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
