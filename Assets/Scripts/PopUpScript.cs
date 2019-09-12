@@ -8,7 +8,7 @@ public class PopUpScript : MonoBehaviour
     [Header("Click Functions")]
     private float startPosX;
     private float startPosY;
-    public bool isBeingHeld = false;
+    private bool isBeingHeld = false;
 
     [Header("Random Fuctions")]
     private Vector2 min;
@@ -24,6 +24,7 @@ public class PopUpScript : MonoBehaviour
     public float currentPopUpTimer;
     private Vector3 originalScale;
     
+    
     private bool isScaling;
     
     
@@ -34,8 +35,8 @@ public class PopUpScript : MonoBehaviour
        shouldPopUp = false;
        stayOnScreen = false;
        currentPopUpTimer = MaxPopUpTimer;
-       originalScale = gameObject.transform.localScale;
-       
+       //originalScale = gameObject.transform.localScale;
+       originalScale = new Vector3(0,0,0);
        isScaling = false;
 
     }
@@ -49,6 +50,7 @@ public class PopUpScript : MonoBehaviour
         if (stayOnScreen == false)
         {
             currentPopUpTimer = currentPopUpTimer - 0.5f * Time.deltaTime;
+            
         
         }
         
@@ -59,6 +61,7 @@ public class PopUpScript : MonoBehaviour
             stayOnScreen = true;
             currentPopUpTimer = MaxPopUpTimer;
             gameObject.transform.localScale = originalScale;
+            StartCoroutine(scaleOverTime(gameObject.transform, new Vector3(0.8f, 0.8f, 0), 5));
 
         }
 
@@ -81,15 +84,16 @@ public class PopUpScript : MonoBehaviour
             this.gameObject.transform.localPosition = new Vector3(mousePos.x - startPosX,mousePos.y - startPosY,0);
             //Decrease time and size once clicked on.
             stayOnScreen = false;
-            StartCoroutine(scaleOverTime(gameObject.transform, new Vector3(0, 0, 0), 2f));
+            StartCoroutine(scaleOverTime(gameObject.transform, new Vector3(0, 0, 0), currentPopUpTimer));
             
         }
-
+        
+        
     }
     
     private void SetRanges()
     {
-        min = new Vector2(-7, -4); //Random value.
+        min = new Vector2(-7, 0.2f); //Random value.
         max = new Vector2(8, 4); //Another ramdon value, just for the example.
     }
 
@@ -112,7 +116,7 @@ public class PopUpScript : MonoBehaviour
         while (counter < duration)
         {
             counter += Time.deltaTime;
-            objectToScale.localScale = Vector3.Lerp(startScaleSize, toScale, counter / duration);
+            objectToScale.localScale = Vector3.Lerp(startScaleSize, toScale, counter/duration );
             yield return null;
         }
 

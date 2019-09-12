@@ -24,7 +24,7 @@ public class TimerBar : MonoBehaviour
     
     void Start()
     {
-        MaxTime = 20;
+        MaxTime = MaxTime;
         //On game load, set timer to Full
         CurrentTime = MaxTime;
         timer.value = CalculateTime();
@@ -63,8 +63,8 @@ public class TimerBar : MonoBehaviour
 
             p1Script.transform.position = respawn1.transform.position;
             p2Script.transform.position = respawn2.transform.position;
-            p1Script.enabled = false;
-            p2Script.enabled = false;
+            playerOne.SetActive(false);
+            playerTwo.SetActive(false);
         }
       
     }
